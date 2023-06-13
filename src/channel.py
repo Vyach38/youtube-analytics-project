@@ -15,5 +15,6 @@ class Channel:
 
     def print_info(self) -> None:
         """Выводит в консоль информацию о канале."""
-        Channel.youtube = build('youtube', 'v3', developerKey=Channel.api_key)
+        channel = self.youtube.channels().list(id=channel_id, part='snippet,statistics').execute()
+        print(channel)
 
