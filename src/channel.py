@@ -41,5 +41,5 @@ class Channel:
     def to_json(self):
         """Создаём файл json с данными youtube канала"""
         data = self.channel
-        with open("moscowpython.json", "a", encoding="utf-8") as f:
+        with open(os.path.join(os.path.dirname(__file__), "moscowpython.json"), "a", encoding="utf-8") as f:
             json.dump(data, f, indent=2)
