@@ -67,9 +67,7 @@ class Channel:
         """Возврощает объект с данными (snippet,statistics) youtube канала в формате json"""
         return self.channel
 
-    @property
-    def to_json(self):
+    def to_json(self, file_path):
         """Создаём файл json с данными youtube канала"""
-        file_path = os.path.join(os.path.dirname(__file__), "moscowpython.json")
         with open(file_path, "a") as f:
             json.dump(self.channel, f, indent=2)
